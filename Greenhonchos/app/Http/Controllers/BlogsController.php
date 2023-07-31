@@ -11,18 +11,11 @@ class BlogsController extends Controller
 {
     public function blogs(Request $request)
     {
-        $defult = 1000;
 
         if ($request->ajax()) {
-            $blogs = Blogs::take($defult)->get();
-            // paginate(1000, ['*'], 'page', 1000)->toArray();
-
-
-            // take($defult)->get();
-            // dd($blogs);
-            // paginate($start, ['*'], 'page', $length)->toArray()['data'];
-
+            $blogs = Blogs::select('id', 'title', 'content', 'tags', 'image');
             return DataTables::of($blogs)
+                ->setTotalRecords($blogs->count())
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
 

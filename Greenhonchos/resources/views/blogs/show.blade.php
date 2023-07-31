@@ -9,36 +9,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <style>
-        /* Custom CSS Styles */
-        .blog-post {
-            border: 1px solid #ddd;
-            padding: 200px;
-            background-color: #f9f9f9;
-        }
+    /* Custom CSS Styles */
+    .blog-post {
+        border: 1px solid #ddd;
+        padding: 200px;
+        background-color: #f9f9f9;
+    }
 
-        .blog-title {
-            font-size: 28px;
-            font-weight: bold;
-            color: #333;
-        }
+    .blog-title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+    }
 
-        .blog-tag {
-            font-size: 16px;
-            color: #666;
-        }
+    .blog-tag {
+        font-size: 16px;
+        color: #666;
+    }
 
-        .blog-content {
-            font-size: 18px;
-            color: #444;
-        }
+    .blog-content {
+        font-size: 18px;
+        color: #444;
+    }
 
-        /* Optional: Center the blog on the page */
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+    /* Optional: Center the blog on the page */
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
     </style>
 </head>
 
@@ -49,7 +49,7 @@
             <div class="col-md-8 offset-md-2">
                 <div class="blog-post">
                     <h2 class="blog-title">{{ $blog->title }}</h2>
-                    <img src="{{ asset($blog->image) }}" alt="Blog Image" class="img-fluid mt-3">
+                    <img src="{{ asset('images/'.$blog->image) }}" alt="Blog Image" class="img-fluid mt-3">
                     <p class="blog-tag">Tag: {{ $blog->tags }}</p>
                     <p class="blog-content">{{ $blog->content }}</p>
                     <a href="{{url('blogs')}}" class="edit btn btn-primary btn-sm ">Back</a>
